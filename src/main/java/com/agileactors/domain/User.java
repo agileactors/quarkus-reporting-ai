@@ -1,4 +1,4 @@
-package com.agileactors.users.domain;
+package com.agileactors.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;

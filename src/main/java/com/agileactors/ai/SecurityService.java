@@ -1,4 +1,4 @@
-package com.agileactors.users.ai;
+package com.agileactors.ai;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;

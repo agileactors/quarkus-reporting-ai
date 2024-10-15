@@ -1,25 +1,23 @@
-package com.agileactors.users.data.repository;
+package com.agileactors.data.repository;
 
+import com.agileactors.ai.SqlGeneratorService;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.persistence.EntityManager;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
-
 import org.hibernate.exception.DataException;
 import org.hibernate.exception.SQLGrammarException;
 
-import com.agileactors.users.ai.SqlGeneratorService;
-import com.agileactors.users.domain.User;
-
-import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
-import jakarta.enterprise.context.ApplicationScoped;
-
 @ApplicationScoped
-public class UserRepository implements PanacheRepositoryBase<User, UUID> {
+public class DataRepository {
 
   private final SqlGeneratorService sqlGeneratorService;
+  private final EntityManager entityManager;
 
-  public UserRepository(SqlGeneratorService sqlGeneratorService) {
+  public DataRepository(SqlGeneratorService sqlGeneratorService, EntityManager entityManager) {
     this.sqlGeneratorService = sqlGeneratorService;
+    this.entityManager = entityManager;
   }
 
   public List findWithNaturalLanguage(String naturalLanguageQuery) {
@@ -35,7 +33,7 @@ public class UserRepository implements PanacheRepositoryBase<User, UUID> {
   private Stream<String> getEntities(UUID memoryId, String nativeQuery) {
     try {
 
-      return getEntityManager()
+      return entityManager
           .createNativeQuery(nativeQuery)
           .getResultStream();
 

@@ -1,7 +1,6 @@
-package com.agileactors.users.api;
+package com.agileactors.api;
 
-import com.agileactors.users.ai.SecurityAwareContextRemovalService;
-import com.agileactors.users.data.repository.UserRepository;
+import com.agileactors.data.repository.DataRepository;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -11,9 +10,9 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/api/users")
 public class UsersApi {
 
-  private final UserRepository userRepository;
+  private final DataRepository userRepository;
 
-  public UsersApi(UserRepository userRepository) {
+  public UsersApi(DataRepository userRepository) {
     this.userRepository = userRepository;
   }
 

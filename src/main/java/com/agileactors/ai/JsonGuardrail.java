@@ -1,4 +1,4 @@
-package com.agileactors.users.ai;
+package com.agileactors.ai;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.langchain4j.data.message.AiMessage;

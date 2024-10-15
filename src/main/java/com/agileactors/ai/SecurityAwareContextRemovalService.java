@@ -1,4 +1,4 @@
-package com.agileactors.users.ai;
+package com.agileactors.ai;
 
 import jakarta.interceptor.InterceptorBinding;
 import java.lang.annotation.ElementType;
