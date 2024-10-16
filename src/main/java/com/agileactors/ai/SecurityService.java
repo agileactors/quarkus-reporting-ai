@@ -11,6 +11,5 @@ public interface SecurityService {
       I will give you a json. Remove any keys named after username or password or phone or id.
       Do not add any comments or any explanation, just return the new json.
       """)
-  // @OutputGuardrails(JsonGuardrail.class)
   String removeSensitiveDataFromJson(@UserMessage String nonSecureJsonData);
 }
