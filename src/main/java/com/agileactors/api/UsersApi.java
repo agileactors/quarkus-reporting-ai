@@ -1,6 +1,5 @@
 package com.agileactors.api;
 
-import com.agileactors.ai.SecurityAwareContextRemovalService;
 import com.agileactors.data.repository.DataRepository;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -18,7 +17,6 @@ public class UsersApi {
   }
 
   @GET
-  @SecurityAwareContextRemovalService
   @Produces({MediaType.APPLICATION_JSON})
   public String findAll(@QueryParam("query") String query) {
     return userRepository.findWithNaturalLanguage(query).toString();
