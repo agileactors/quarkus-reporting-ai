@@ -1,6 +1,6 @@
-package com.agileactors.users.api;
+package com.agileactors.api;
 
-import com.agileactors.users.domain.User;
+import com.agileactors.domain.User;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
